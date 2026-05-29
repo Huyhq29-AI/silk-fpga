@@ -1,0 +1,50 @@
+name: SILK FPGA - Auto Compile JS
+
+on:
+  push:
+    # Kích hoạt con bot khi có thay đổi trong thư mục your_project
+    paths:
+      - 'remote_lab/your_project/**'
+  pull_request:
+    paths:
+      - 'remote_lab/your_project/**'
+
+jobs:
+  compile_virtual_board:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Detect Mode and Compile
+        run: |
+          echo "=== Kiểm tra cấu hình dự án của sinh viên ==="
+          
+          # 1. Kiểm tra xem có file mode.txt ko
+          MODE_FILE="remote_lab/your_project/mode.txt"
+          if [ ! -f "$MODE_FILE" ]; then
+            echo "LỖI: Không tìm thấy file mode.txt trong thư mục your_project"
+            echo "Vui lòng tạo file mode.txt và ghi chế độ bạn muốn (VD: VGA, HEX, UART, PS2)."
+            exit 1
+          fi
+
+          # 2. Đọc nội dung file mode.txt
+          TARGET_MODE=$(cat $MODE_FILE | tr -d '\r' | tr -d ' ' | tr '[:lower:]' '[:upper:]')
+          echo "Phát hiện chế độ biên dịch: -DMODE_$TARGET_MODE"
+
+          # 3. Kéo image compiler 
+          docker pull huyatieo/fpga-compiler:latest
+
+          # 4. Chạy compiler, mount đúng thư mục your_project vào /src của container
+          echo "=== Đang biên dịch mã RTL sang silkfpga.js ==="
+          docker run --rm -v "${{ github.workspace }}/remote_lab/your_project:/src" huyatieo/fpga-compiler -DMODE_${TARGET_MODE}
+
+      - name: Upload JS/WASM Output
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-board-js
+          path: |
+            remote_lab/your_project/*.js
+      
+  
+          retention-days: 7
