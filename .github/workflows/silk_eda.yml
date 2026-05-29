@@ -86,8 +86,14 @@ jobs:
              echo "![Sơ Đồ Module](${REPO_URL}/generic/.results/module_${TOP_MODULE}.svg)" >> $GITHUB_STEP_SUMMARY
           fi
           
+
+          echo "## 2. RTL Schematic" >> $GITHUB_STEP_SUMMARY
+          if [ -f ".results/schematic_${TOP_MODULE}.svg" ]; then
+             echo "![Sơ Đồ Nguyên Lý RTL](${REPO_URL}/generic/.results/schematic_${TOP_MODULE}.svg)" >> $GITHUB_STEP_SUMMARY
+          fi
+
           # --- THỐNG KÊ TÀI NGUYÊN (Generic Cells) ---
-          echo "## 2. Tài Nguyên Thiết Kế (Generic Cells)" >> $GITHUB_STEP_SUMMARY
+          echo "## 3. Tài Nguyên Thiết Kế (Generic Cells)" >> $GITHUB_STEP_SUMMARY
           echo '```text' >> $GITHUB_STEP_SUMMARY
           if [ -f ".results/resource_stat.txt" ]; then
              cat .results/resource_stat.txt >> $GITHUB_STEP_SUMMARY
@@ -96,12 +102,7 @@ jobs:
           fi
           echo '```' >> $GITHUB_STEP_SUMMARY
           # -----------------------------------------
-
-          echo "## 3. RTL Schematic" >> $GITHUB_STEP_SUMMARY
-          if [ -f ".results/schematic_${TOP_MODULE}.svg" ]; then
-             echo "![Sơ Đồ Nguyên Lý RTL](${REPO_URL}/generic/.results/schematic_${TOP_MODULE}.svg)" >> $GITHUB_STEP_SUMMARY
-          fi
-
+          
           echo "## 4. Sơ Đồ Trạng Thái (FSM)" >> $GITHUB_STEP_SUMMARY
           if [ -f ".results/fsm_${TOP_MODULE}.svg" ]; then
              echo "![Sơ Đồ FSM](${REPO_URL}/generic/.results/fsm_${TOP_MODULE}.svg)" >> $GITHUB_STEP_SUMMARY
