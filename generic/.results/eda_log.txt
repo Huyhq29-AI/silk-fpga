@@ -1,5 +1,5 @@
 === BẮT ĐẦU SILK-EDA ===
-✅ Top Module: array_mul
+✅ Top Module: array_mul_top
 ✅ Testbench: tb_systolic2x2
 === 1/4: Đang kiểm tra lỗi cú pháp và logic (Linting) ===
 /usr/local/bin/entrypoint.sh: line 23: 1: command not found
