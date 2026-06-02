@@ -1,1 +1,22 @@
-exec /usr/local/bin/entrypoint.sh: exec format error
+=== BẮT ĐẦU SILK-EDA ===
+✅ Top Module: systolic2x2
+✅ Testbench: tb_systolic2x2
+=== 0/4: Đang kiểm tra lỗi cú pháp và logic (Linting) ===
+✅ Code RTL vượt qua Verilator linting.
+=== 1/4: Đang tạo Module Documentation ===
+=== 2/4: Đang tổng hợp Netlist và FSM bằng Yosys ===
+=== 3/4: Đang vẽ Schematic và FSM ===
+=== 4/4: Đang mô phỏng và tạo sóng ===
+VCD info: dumpfile sim/waveform.vcd opened for output.
+----------------------------------------
+Time: 80000 | Negedge Data Push Test Results:
+Matrix C = A * B
+Calculated C = [  3    7]
+               [  5   12]
+Expected   C = [3   7]
+               [5  12]
+Status: PASSED
+----------------------------------------
+tb/tb_systolic2x2.v:88: $finish called at 100000 (1ps)
+✅ Đã tạo Waveform trong thư mục sim/
+🎉 HOÀN TẤT PIPELINE!
