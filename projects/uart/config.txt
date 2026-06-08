@@ -1,3 +1,2 @@
 TOP_MODULE = uart
-
 TB_NAME = //có thể để trống
