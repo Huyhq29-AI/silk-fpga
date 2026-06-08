@@ -1,5 +1,5 @@
 === BẮT ĐẦU SILK-EDA ===
-✅ Top Module: uart
+✅ Top Module: uart_rx
 ✅ Testbench: //cóthểđểtrống
 === 0/4: Đang kiểm tra lỗi cú pháp và logic (Linting) ===
 ✅ Code RTL vượt qua Verilator linting.
