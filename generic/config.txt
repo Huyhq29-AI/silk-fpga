@@ -1,2 +1,2 @@
-TOP_MODULE = spm
+TOP_MODULE = systolic2x2
 TB_NAME = 
