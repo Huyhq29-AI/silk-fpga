@@ -26,6 +26,7 @@ module uart (
     // ==========================================
     // MODULE NHẬN UART (RX)
     // ==========================================
+    /* verilator lint_off PINMISSING */
     uart_rx #(
         .CLK_HZ(25_000_000),  // clock 25MHz
         .BIT_RATE(115200),    //
@@ -35,13 +36,12 @@ module uart (
         .clk(clk),
         .resetn(rst_n),
         .uart_rxd(uart_rx_pin),
-        /* verilator lint_off PINMISSING */
-        //.uart_rts(), // Không dùng 
+        .uart_rts(), // Không dùng 
         .uart_rx_read(rx_read_ack),
         .uart_rx_valid(rx_valid),
         .uart_rx_data(rx_data)
     );
-
+    /* verilator lint_on PINMISSING */
     // ==========================================
     // MODULE PHÁT UART (TX)
     // ==========================================
