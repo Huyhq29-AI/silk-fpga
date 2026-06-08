@@ -1,4 +1,4 @@
-module top_module (
+module uart (
     input        clk,
     input        rst_n,
     input  [7:0] SW, //khong dung switch4
