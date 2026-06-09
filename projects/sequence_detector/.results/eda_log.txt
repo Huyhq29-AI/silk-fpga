@@ -1,0 +1,2 @@
+=== BẮT ĐẦU SILK-EDA ===
+❌ LỖI: Không tìm thấy config.txt!
