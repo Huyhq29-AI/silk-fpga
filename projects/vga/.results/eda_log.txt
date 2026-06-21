@@ -2,15 +2,17 @@
 ✅ Top Module: top_module
 ✅ Testbench: 
 === 0/4: Đang kiểm tra lỗi cú pháp và logic (Linting) ===
-%Warning-WIDTHEXPAND: rtl/vga.sv:418:26: Operator SUB expects 10 bits on the RHS, but RHS's VARREF 'speed' generates 4 bits.
-                                       : ... note: In instance 'top_module.u_obstacle_ctrl'
-  418 |           obs_x <= obs_x - speed;
-      |                          ^
-                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.020
-                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
-%Warning-WIDTHEXPAND: rtl/vga.sv:415:19: Operator LTE expects 10 bits on the RHS, but RHS's VARREF 'speed' generates 4 bits.
-                                       : ... note: In instance 'top_module.u_obstacle_ctrl'
-  415 |         if (obs_x <= speed)
-      |                   ^~
-%Error: Exiting due to 2 warning(s)
+%Error: rtl/vga.sv:285:10: syntax error, unexpected checker, expecting IDENTIFIER or do or final or randomize
+  285 |     wire checker  = blk_x[0] ^ blk_y[0]; 
+      |          ^~~~~~~
+%Error: rtl/vga.sv:291:36: syntax error, unexpected checker, expecting TYPE-IDENTIFIER
+  291 |             if (state == S_OVER && checker) begin
+      |                                    ^~~~~~~
+%Error: rtl/vga.sv:293:17: syntax error, unexpected else
+  293 |             end else if (is_head) begin
+      |                 ^~~~
+%Error: rtl/vga.sv:295:17: syntax error, unexpected else
+  295 |             end else if (is_snake) begin
+      |                 ^~~~
+%Error: Exiting due to 4 error(s)
 🛑 Hãy đọc kỹ log cảnh báo (Error/Warning) ở trên, sửa lỗi và push lại.
