@@ -282,13 +282,13 @@ module renderer (
     end
 
     wire is_apple = (blk_x == apple_x && blk_y == apple_y);
-    wire checker  = blk_x[0] ^ blk_y[0]; 
+    wire is_checker  = blk_x[0] ^ blk_y[0]; // BẢN VÁ: Đổi tên biến khỏi từ khóa reserved của SV
 
     always @(*) begin
         if (!video_active) begin
             red = 2'b00; green = 2'b00; blue = 2'b00;
         end else begin
-            if (state == S_OVER && checker) begin
+            if (state == S_OVER && is_checker) begin
                 red = 2'b11; green = 2'b00; blue = 2'b00; // Đỏ màn hình Game Over
             end else if (is_head) begin
                 red = 2'b00; green = 2'b11; blue = 2'b11; // Đầu rắn
@@ -297,7 +297,7 @@ module renderer (
             end else if (is_apple) begin
                 red = 2'b11; green = 2'b00; blue = 2'b00; // Quả táo
             end else begin
-                if (checker) begin
+                if (is_checker) begin
                     red = 2'b01; green = 2'b01; blue = 2'b01; // Cỏ sáng
                 end else begin
                     red = 2'b00; green = 2'b00; blue = 2'b00; // Cỏ tối
