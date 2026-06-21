@@ -2,17 +2,11 @@
 ✅ Top Module: top_module
 ✅ Testbench: 
 === 0/4: Đang kiểm tra lỗi cú pháp và logic (Linting) ===
-%Error: rtl/vga.sv:285:10: syntax error, unexpected checker, expecting IDENTIFIER or do or final or randomize
-  285 |     wire checker  = blk_x[0] ^ blk_y[0]; 
-      |          ^~~~~~~
-%Error: rtl/vga.sv:291:36: syntax error, unexpected checker, expecting TYPE-IDENTIFIER
-  291 |             if (state == S_OVER && checker) begin
-      |                                    ^~~~~~~
-%Error: rtl/vga.sv:293:17: syntax error, unexpected else
-  293 |             end else if (is_head) begin
-      |                 ^~~~
-%Error: rtl/vga.sv:295:17: syntax error, unexpected else
-  295 |             end else if (is_snake) begin
-      |                 ^~~~
-%Error: Exiting due to 4 error(s)
+%Warning-WIDTHTRUNC: rtl/vga.sv:261:22: Operator ASSIGNW expects 5 bits on the Assign RHS, but Assign RHS's SEL generates 6 bits.
+                                      : ... note: In instance 'top_module.u_renderer'
+  261 |     wire [4:0] blk_y = pixel_y[9:4]; 
+      |                      ^
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.020
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)
 🛑 Hãy đọc kỹ log cảnh báo (Error/Warning) ở trên, sửa lỗi và push lại.
