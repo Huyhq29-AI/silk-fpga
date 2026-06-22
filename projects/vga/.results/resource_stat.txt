@@ -1,0 +1,119 @@
+
+7. Printing statistics.
+
+=== hvsync_generator ===
+
+   Number of wires:                 37
+   Number of wire bits:            154
+   Number of public wires:           9
+   Number of public wire bits:      45
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 23
+     $add                            2
+     $dff                            2
+     $eq                             2
+     $ge                             2
+     $logic_and                      3
+     $logic_not                      1
+     $lt                             4
+     $mux                            5
+     $not                            2
+
+=== renderer ===
+
+   Number of wires:                820
+   Number of wire bits:           1378
+   Number of public wires:          21
+   Number of public wire bits:     455
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                330
+     $eq                           131
+     $logic_and                     67
+     $logic_not                      1
+     $lt                            32
+     $mux                           98
+     $xor                            1
+
+=== collision ===
+
+   Number of wires:                267
+   Number of wire bits:            710
+   Number of public wires:          11
+   Number of public wire bits:     414
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                190
+     $eq                            62
+     $ge                             2
+     $logic_and                     62
+     $logic_or                       1
+     $lt                            31
+     $mux                           31
+     $or                             1
+
+=== top_module ===
+
+   Number of wires:                721
+   Number of wire bits:           3137
+   Number of public wires:          99
+   Number of public wire bits:     815
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                380
+     $add                            5
+     $dff                           75
+     $eq                            10
+     $fsm                            2
+     $ge                             1
+     $logic_and                     11
+     $logic_not                     19
+     $logic_or                       4
+     $lt                             3
+     $mux                          235
+     $ne                             1
+     $not                            2
+     $pmux                           1
+     $sub                            5
+     $xor                            3
+     collision                       1
+     hvsync_generator                1
+     renderer                        1
+
+=== design hierarchy ===
+
+   top_module                        1
+     collision                       1
+     hvsync_generator                1
+     renderer                        1
+
+   Number of wires:               1845
+   Number of wire bits:           5379
+   Number of public wires:         140
+   Number of public wire bits:    1729
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                920
+     $add                            7
+     $dff                           77
+     $eq                           205
+     $fsm                            2
+     $ge                             5
+     $logic_and                    143
+     $logic_not                     21
+     $logic_or                       5
+     $lt                            70
+     $mux                          369
+     $ne                             1
+     $not                            4
+     $or                             1
+     $pmux                           1
+     $sub                            5
+     $xor                            4
+
