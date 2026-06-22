@@ -256,7 +256,8 @@ module renderer (
     output reg  [1:0]   blue
 );
     localparam S_OVER = 2'd2;
-    
+    /* verilator lint_off WIDTHTRUNC */
+
     wire [5:0] blk_x = pixel_x[9:4]; 
     wire [4:0] blk_y = pixel_y[9:4]; 
     
