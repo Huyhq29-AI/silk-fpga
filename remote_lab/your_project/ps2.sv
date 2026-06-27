@@ -27,7 +27,7 @@ module top_module (
   assign r = red;
   assign g = green;
   assign b = blue;
-  assign video_active = visible;
+  assign video_active = visible ;
 
   // --- Dây tín hiệu giao tiếp ---
   wire [1:0]   state;
