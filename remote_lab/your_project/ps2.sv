@@ -146,7 +146,7 @@ module ps2_receiver (
                 shift_reg <= {ps2_dat, shift_reg[10:1]};
                 
                 if (bit_cnt == 4'd10) begin
-                    /
+                    
                     scan_code <= shift_reg[9:2]; 
                     rx_done   <= 1'b1;
                     bit_cnt   <= 4'd0;
