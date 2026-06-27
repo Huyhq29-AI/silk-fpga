@@ -4,7 +4,7 @@
 // =========================================================================
 // 1. TOP MODULE 
 // =========================================================================
-module top_module (
+module debai1 (
     input  wire       clk,
     input  wire       rst_n,
     input  wire [7:0] SW,       // 8 switch control
